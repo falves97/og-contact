@@ -16,7 +16,6 @@ class UserTest extends TestCase
     public function test_not_authorized()
     {
         $response = $this->get('api/me');
-
         $response->assertStatus(401);
     }
 }
