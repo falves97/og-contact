@@ -1,0 +1,51 @@
+version: '3'
+services:
+  app:
+    build:
+      args:
+        user: "user"
+        uid: 1000
+      context: ./docker-compose/php/
+      dockerfile: php.Dockerfile
+    container_name: og-contact-api-php
+    image: og-contact-api-php
+    restart: unless-stopped
+    volumes:
+      - ./www:/var/www
+    depends_on:
+      - database
+    networks:
+      - og-network
+
+  web:
+    image: nginx:latest
+    container_name: og-contact-api-web
+    restart: unless-stopped
+    ports:
+      - 8001:8001
+    volumes:
+      - ./docker-compose/nginx:/etc/nginx/conf.d
+      - ./www:/var/www
+    depends_on:
+      - app
+    networks:
+      - og-network
+
+  database:
+    image: mysql:8-debian
+    container_name: og-contact-api-db
+    restart: unless-stopped
+    env_file:
+      - www/og-contact-api/.env
+    ports:
+      - 3306:3306
+    volumes:
+      - db-volume:/var/lib/mysql
+    networks:
+      - og-network
+
+networks:
+  og-network:
+
+volumes:
+  db-volume:
