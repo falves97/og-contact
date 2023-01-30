@@ -1,6 +1,16 @@
-# API REST
+## Ambiente
 
-## Redrecionamento para uma rota GET /login
+Primeiramente eu pensei em fazer uma única imagem docke, com os servidores web, php, e banco de dados.
+Acabei achando muito complexo, teria que fazer vária configurações específicas de cada servido. Coisas 
+que já vem bem otimizadas em suas respectivas imagens oficiais.
+
+Assim, decidi criar um ambiente com docker-compose. A escolha do nginx, foi feita pensando em possível escalabilidade,
+já que é possível configurar Load Balancer, entre outras coisas de forma até "simples" (Não implementei Load Balancer).
+Também sendo possível servir as aplicações front-end. No projeto estariam dentro de "www", mas poderiam está até mesmo
+em outro servidor.
+## API REST
+
+### Redrecionamento para uma rota GET /login
 
 ### Problema
 
