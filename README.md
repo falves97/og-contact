@@ -1,6 +1,6 @@
 # OG Contact
 
-Para a proposta do projeto apesenatada, eu decidi separar em 3 partes:
+Para a proposta do projeto apresentado, eu decidi separar em 3 partes:
 
 - API REST para o back-end
 - Front-end administrativo
@@ -10,11 +10,11 @@ A motivação para esta divisão, é para facilitar o trabalho de desenvolviment
 em que esse projeto fosse desenvolvido por um time).
 
 Deixar o back-end desaclopado com uma API REST, dá mais liberdade para o front-end, desenvolver em qualquer linguagem,
-quelquer framework, podendo até mesmo estar hospedado em servidores diferentes.
+qualquer framework, podendo até mesmo estar hospedado em servidores diferentes.
 
 ## API REST
 
-Será implemtada em Laravel, para fazer toda a infra-estrutura de back-end.
+Será implementada em Laravel, para fazer toda a infraestrutura de back-end.
 
 ## Requisitos
 
@@ -41,8 +41,7 @@ Para rodar o projeto, basta clonar o repositório, na raiz do projeto, execultar
 
     docker compose up -d --build
 
-Será gerado um arquivo *.env*. Nele insira seu domínio e chave do Mailgun, nas
-variáveis:
+Será gerado um arquivo *.env*. Nele insira seu domínio e chave do Mailgun, nas variáveis:
 
     MAILGUN_DOMAIN
     MAILGUN_SECRET
@@ -53,8 +52,6 @@ enviar seus e-mails de contato.
 
 ## Features que gostaria de implementar:
 
-**Mensagerias:** A requisição para o envio de e-amail, tem uma emora considerável, criando uma fila de
-processos assinconos, o cliente receberia uma resposta quase que imediata após a inserção no banco de dados, depois
-os emails seriam enviados.
+**Mensagerias:** A requisição para o envio de e-mail, tem uma demora considerável, criando uma fila de processos assíncronos, o cliente receberia uma resposta quase que imediata após a inserção no banco de dados, depois os e-mails seriam enviados.
 
 **Front-end:**
