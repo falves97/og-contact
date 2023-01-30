@@ -11,7 +11,7 @@ services:
     image: og-contact-api-php
     restart: unless-stopped
     volumes:
-      - ./www:/var/www
+      - ./www/og-contact-api:/var/www/og-contact-api
     depends_on:
       - database
     networks:

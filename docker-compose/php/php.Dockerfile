@@ -29,6 +29,9 @@ RUN mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
 
 # Set working directory
-WORKDIR /var/www/
+WORKDIR /var/www/og-contact-api
 
 USER $user
+
+COPY --chown=user:user init.sh /
+CMD ["/init.sh"]
