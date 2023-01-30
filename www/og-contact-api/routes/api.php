@@ -21,6 +21,8 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout']);
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/me', [AuthController::class, 'me']);
+
+    Route::get('/emails', [ContactEmailController::class, 'index']);
 });
 
 Route::post('/mail', [ContactEmailController::class, 'store']);

@@ -10,6 +10,10 @@ use App\Models\ContactEmail;
 
 class ContactEmailController extends Controller
 {
+    public function index() {
+        return response()->json(ContactEmail::all());
+    }
+
     public function store(ContactEmailRequest $request) {
         $validated = $request->validated();
         $contactEmail = new ContactEmail($validated);
