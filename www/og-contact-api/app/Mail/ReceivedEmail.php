@@ -31,7 +31,7 @@ class ReceivedEmail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: 'f.braga.alves1@gmail.com',
+            from: env('MAIL_TO'),
             subject: 'Confirmação Email'
         );
     }

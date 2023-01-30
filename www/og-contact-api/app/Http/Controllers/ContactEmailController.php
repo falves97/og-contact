@@ -19,7 +19,7 @@ class ContactEmailController extends Controller
         $contactEmail = new ContactEmail($validated);
         $contactEmail->save();
 
-        Mail::to('f.braga.alves1@gmail.com')->send(new ContactMail($contactEmail));
+        Mail::to(env('MAIL_TO'))->send(new ContactMail($contactEmail));
         Mail::to($contactEmail->email)->send(new ReceivedEmail());
     }
 }
