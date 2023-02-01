@@ -32,6 +32,3 @@ RUN mkdir -p /home/$user/.composer && \
 WORKDIR /var/www/og-contact-api
 
 USER $user
-
-COPY --chown=user:user init.sh /
-CMD ["/init.sh"]
