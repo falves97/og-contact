@@ -1,0 +1,7 @@
+@import "fonts.css";
+
+html,
+input,
+select {
+    font-family: 'Poppins', sans-serif;
+}
