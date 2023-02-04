@@ -1,6 +1,6 @@
 # OG Contact
 
-Para a proposta do projeto apesenatada, eu decidi separar em 3 partes:
+Para a proposta do projeto apresentado, eu decidi separar em 3 partes:
 
 - API REST para o back-end
 - Front-end administrativo
@@ -10,11 +10,11 @@ A motivação para esta divisão, é para facilitar o trabalho de desenvolviment
 em que esse projeto fosse desenvolvido por um time).
 
 Deixar o back-end desaclopado com uma API REST, dá mais liberdade para o front-end, desenvolver em qualquer linguagem,
-quelquer framework, podendo até mesmo estar hospedado em servidores diferentes.
+qualquer framework, podendo até mesmo estar hospedado em servidores diferentes.
 
 ## API REST
 
-Será implemtada em Laravel, para fazer toda a infra-estrutura de back-end.
+Será implementada em Laravel, para fazer toda a infraestrutura de back-end.
 
 ## Requisitos
 
@@ -60,6 +60,7 @@ A api está no host *http://localhost:8001*
 A requisição para o envio de e-amail, tem uma emora considerável, criando uma fila de
 processos assinconos, o cliente receberia uma resposta quase que imediata após a inserção no banco de dados, depois
 os emails seriam enviados.
+
 
 **Front-end:**
 
