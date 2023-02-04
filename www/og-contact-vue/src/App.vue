@@ -2,24 +2,53 @@
 
 import ContactForm from "@/components/ContactForm/ContactForm.vue";
 import ContactBanner from "@/components/ContactBanner.vue";
+import Menu from "@/components/Menu.vue";
 </script>
 
 <template>
-  <main>
-    <ContactBanner />
-    <ContactForm/>
-  </main>
+  <header class="header">
+    <div class="container">
+      <div class="logo">THAYNARA OG</div>
+    </div>
+  </header>
+  <div class="container main-content">
+    <main>
+      <ContactBanner/>
+      <ContactForm/>
+    </main>
+    <aside class="aside">
+      <Menu/>
+    </aside>
+  </div>
 </template>
 
 <style scoped>
+.main-content {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px
+}
+
 main {
   display: flex;
-  flex-wrap: wrap;
-  align-content: center;
+  width: 85%;
+  justify-content: flex-end;
+  gap: 10px
+}
+
+.header {
+  height: 80px;
+  display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  justify-content: space-between;
-  margin: 0 auto;
+}
+
+.logo {
+  color: #FF8585;
+  font-weight: 900;
+}
+
+.aside {
+  width: 15%;
 }
 </style>
