@@ -22,6 +22,10 @@ export default {
 </script>
 
 <style scoped>
+  nav {
+    align-self: flex-start;
+  }
+
   ul {
     list-style: none;
     margin: 0;

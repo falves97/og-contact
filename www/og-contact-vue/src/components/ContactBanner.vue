@@ -4,12 +4,14 @@
     </div>
     <ContactOutline class="contact-fill"/>
     <ContactOutline class="contact-outline"/>
+    <Contacts />
   </div>
 </template>
 
 <script setup>
 
 import ContactOutline from "@/components/ContactForm/ContactOutline.vue";
+import Contacts from "@/components/Contacts.vue";
 </script>
 
 <style scoped>
@@ -37,6 +39,7 @@ import ContactOutline from "@/components/ContactForm/ContactOutline.vue";
     position: absolute;
     stroke-width: 2px;
     stroke: #FFDADA;
+    top: 50px;
   }
 
   .contact-fill {
