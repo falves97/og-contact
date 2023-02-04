@@ -23,6 +23,7 @@ services:
     restart: unless-stopped
     ports:
       - 8001:8001
+      - 8002:8002
     volumes:
       - ./docker-compose/nginx:/etc/nginx/conf.d
       - ./www:/var/www
