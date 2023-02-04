@@ -39,19 +39,30 @@ A rota privada para listar os emails recebidos:
 
 Para rodar o projeto, basta clonar o repositório, na raiz do projeto, execultar:
 
-    docker compose up -d --build
+    ./init.sh
 
-Será gerado um arquivo *.env*. Nele insira seu domínio e chave do Mailgun, nas variáveis:
+Será gerado um arquivo *.env* dentro de og-contact-api. Nele insira seu domínio e chave do Mailgun, nas
+variáveis:
 
     MAILGUN_DOMAIN
     MAILGUN_SECRET
     MAIL_TO
 
-Agora basta usar a rota *http://localhost:8001/api/send* para
-enviar seus e-mails de contato.
+Agora basta acessar *http://localhost:8002* para
+visualizar a página de contato.
+
+A api está no host *http://localhost:8001*
 
 ## Features que gostaria de implementar:
 
-**Mensagerias:** A requisição para o envio de e-mail, tem uma demora considerável, criando uma fila de processos assíncronos, o cliente receberia uma resposta quase que imediata após a inserção no banco de dados, depois os e-mails seriam enviados.
+**Mensagerias:** 
+
+A requisição para o envio de e-amail, tem uma emora considerável, criando uma fila de
+processos assinconos, o cliente receberia uma resposta quase que imediata após a inserção no banco de dados, depois
+os emails seriam enviados.
+
 
 **Front-end:**
+
+- Validações na página de contato
+- CMS
