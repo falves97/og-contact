@@ -1,6 +1,9 @@
 <template>
 
   <div class="form">
+    <div v-if="hasAlert" :class="alertType">
+      {{ alertMessage }}
+    </div>
 
     <div class="form__subject">
       <label for="subject">Seu contato é relacionado a:</label>
@@ -25,7 +28,7 @@
           Não sou um robô
         </label>
 
-      <div class="btn-send">
+      <div class="btn-send" @click.prevent="send">
         <span class="btn-send__text">Enviar</span>
         <SendIcon class="btn-send__icon"/>
       </div>
@@ -51,15 +54,11 @@ const email = ref("");
 const phone = ref("");
 const message = ref("");
 
+const hasAlert = ref(false);
+const alertType = ref("");
+const alertMessage = ref("");
+
 function send() {
-  console.log(JSON.stringify({
-    subject: subject.value,
-    name: name.value,
-    company: company.value,
-    email: email.value,
-    phone: phone.value,
-    message: message.value
-  }))
 
   fetch('http://localhost:8001/api/mail', {
     method: 'POST',
@@ -75,8 +74,19 @@ function send() {
       message: message.value
     })
   })
-      .then(resp => resp.json())
-      .then(resp => console.log(resp))
+      .then(resp => {
+        if(resp.status >= 400) {
+          alertType.value = "alert-error"
+          alertMessage.value = "Erro ao enviar e-mail. Por favor, preencha corretamente todos os campos."
+        }
+        else {
+          alertType.value = "alert-success"
+          alertMessage.value = "E-mail enviado com sucesso."
+        }
+      })
+
+
+  hasAlert.value = true;
 }
 
 
@@ -201,5 +211,23 @@ function send() {
 
 .btn-send__icon {
   fill: white;
+}
+
+.alert-error,
+.alert-success {
+  width: 100%;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+
+.alert-error {
+  background-color: #ffebeb;
+  border-color: #ffbebe;
+}
+
+.alert-success {
+  background-color: #efffeb;
+  border-color: #ccffc0;
 }
 </style>
